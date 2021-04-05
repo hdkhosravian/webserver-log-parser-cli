@@ -8,7 +8,7 @@ You can use this CLI very easily.
 
 1. In the first step, you have to clone the project on your machine. for cloning the project, you can use this command:
 
-    `git clone github_address.`
+    `git clone github_address`
 
 2. Go to the directory of the project.
 
@@ -79,6 +79,7 @@ you can send multiple arguments to this command, and it'll consider all of them 
 
 ## TODO
 
+- [ ] Research about using ElasticSearch and Regex to make the process faster.
 - [ ] Add a Validation to make sure the web server log file has the correct format.
 - [ ] Get the list of IPs that viewed a specific page.
 - [ ] Get the list of pages that an IP looks at it.
