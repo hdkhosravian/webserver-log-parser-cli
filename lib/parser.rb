@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 require 'bundler/setup'
 require 'dry/cli'
 
 # import src files
-Dir.glob('./lib/**/*.rb') { |f| require f }
+Dir.glob('./lib/**/*.rb').each { |f| require f }
 
 module Lib
   module Parser

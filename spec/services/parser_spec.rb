@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 require 'json'
 require './lib/src/service/generate_hash'
 
 describe Lib::Src::Service::Parser do
-  context "successful parse a log file" do
-    it "sorted base on all views count" do
+  context 'successful parse a log file' do
+    it 'sorted base on all views count' do
       generated_log_hash = Lib::Src::Service::Parser.new(
         './spec/fixtures/webserver.log'
       ).process
@@ -14,7 +16,7 @@ describe Lib::Src::Service::Parser do
       )
     end
 
-    it "sorted base on uniq views count" do
+    it 'sorted base on uniq views count' do
       generated_log_hash = Lib::Src::Service::Parser.new(
         './spec/fixtures/webserver.log',
         true
@@ -27,8 +29,8 @@ describe Lib::Src::Service::Parser do
     end
   end
 
-  context "unsuccessful to parse a log file" do
-    it "with invalid file path" do
+  context 'unsuccessful to parse a log file' do
+    it 'with invalid file path' do
       expect {
         Lib::Src::Service::Parser.new(
           'invalid path'
@@ -36,7 +38,7 @@ describe Lib::Src::Service::Parser do
       }.to raise_error(Errno::ENOENT)
     end
 
-    it "without file path" do
+    it 'without file path' do
       expect {
         Lib::Src::Service::Parser.new(
           nil

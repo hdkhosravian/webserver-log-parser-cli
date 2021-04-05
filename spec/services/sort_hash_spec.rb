@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 require 'json'
 require './lib/src/service/sort_hash'
 
 describe Lib::Src::Service::SortHash do
-  context "successful sort a log hash" do
-    it "sorted base on all views count" do
+  context 'successful sort a log hash' do
+    it 'sorted base on all views count' do
       generated_log_hash = Lib::Src::Service::Parser.new(
         './spec/fixtures/webserver.log'
       ).process
@@ -18,7 +20,7 @@ describe Lib::Src::Service::SortHash do
       )
     end
 
-    it "sorted base on uniq views count" do
+    it 'sorted base on uniq views count' do
       generated_log_hash = Lib::Src::Service::Parser.new(
         './spec/fixtures/webserver.log'
       ).process
@@ -35,16 +37,16 @@ describe Lib::Src::Service::SortHash do
     end
   end
 
-  context "unsuccessful to sort a hash log" do
-    it "with invalid hash log" do
+  context 'unsuccessful to sort a hash log' do
+    it 'with invalid hash log' do
       expect {
         Lib::Src::Service::SortHash.new(
-          "invalid hash"
-        ).process  
+          'invalid hash'
+        ).process
       }.to raise_error(NoMethodError)
     end
 
-    it "without a hash log" do
+    it 'without a hash log' do
       expect {
         Lib::Src::Service::SortHash.new(
           nil

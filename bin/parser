@@ -1,6 +1,8 @@
 #!/usr/bin/env ruby
-require "bundler/setup"
-require "dry/cli"
+# frozen_string_literal: true
 
-require "./lib/parser.rb"
+require 'bundler/setup'
+require 'dry/cli'
+
+require './lib/parser'
 Dry::CLI.new(Lib::Parser).call

@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 module Lib
   module Src
     module Service
       class GenerateHash
         attr_reader :file_data
-        
+
         def initialize(file_data)
           @file_data = file_data
         end
@@ -19,11 +21,11 @@ module Lib
         end
 
         def split_view
-          split_logs.map {|data| data.split(" ") }
+          split_logs.map { |data| data.split(' ') }
         end
 
         def generate_grouped_hash
-          grouped_data = split_view.each_with_object({}) do |(key, value), log| 
+          grouped_data = split_view.each_with_object({}) do |(key, value), log|
             log[key] = log[key].to_a.concat([value])
           end
         end

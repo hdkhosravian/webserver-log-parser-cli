@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Lib
   module Src
     module Service
@@ -5,11 +7,11 @@ module Lib
         attr_reader :file_path, :uniq, :file_data, :generate_log_hash, :sort_hash
 
         def initialize(file_path, uniq = false)
-          @file_path  = file_path
-          @generate_log_hash  = {}
+          @file_path = file_path
+          @generate_log_hash = {}
           @sort_hash  = {}
-          @file_data  = ""
-          @uniq  = uniq
+          @file_data  = ''
+          @uniq = uniq
         end
 
         def process

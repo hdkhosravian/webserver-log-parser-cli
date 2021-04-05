@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 require './lib/src/service/open_file'
 
 describe Lib::Src::Service::OpenFile do
-  it "successful with a valid file path" do
+  it 'successful with a valid file path' do
     file_data = Lib::Src::Service::OpenFile.new(
       './spec/fixtures/webserver.log'
     ).process
@@ -9,8 +11,8 @@ describe Lib::Src::Service::OpenFile do
     expect(file_data).to eq(File.read('./spec/fixtures/webserver.log'))
   end
 
-  context "unsuccessful to open a file" do
-    it "because of an invalid file path" do
+  context 'unsuccessful to open a file' do
+    it 'because of an invalid file path' do
       expect {
         Lib::Src::Service::OpenFile.new(
           'invalid path'
@@ -18,7 +20,7 @@ describe Lib::Src::Service::OpenFile do
       }.to raise_error(Errno::ENOENT)
     end
 
-    it "without a file path" do
+    it 'without a file path' do
       expect {
         Lib::Src::Service::OpenFile.new(
           nil

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Lib
   module Src
     module Service
@@ -5,8 +7,8 @@ module Lib
         attr_reader :key, :values
 
         def initialize(key, values)
-          @key  = key
-          @values  = values
+          @key = key
+          @values = values
         end
 
         def process
@@ -16,7 +18,8 @@ module Lib
         private
 
         def print_result
-          puts " %-30s | Views: %-8d | Uniq Views: %-8d" % [key, values.count, values.uniq.count]
+          # I prefer to use I18N, but for now, I'm using hardcoded English message here.
+          puts format(' %-30s | Views: %-8d | Uniq Views: %-8d', key, values.count, values.uniq.count)
         end
       end
     end

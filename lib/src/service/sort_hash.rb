@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Lib
   module Src
     module Service
@@ -5,8 +7,8 @@ module Lib
         attr_reader :generated_log_hash, :uniq
 
         def initialize(generated_log_hash, uniq = false)
-          @generated_log_hash  = generated_log_hash
-          @uniq  = uniq
+          @generated_log_hash = generated_log_hash
+          @uniq = uniq
         end
 
         def process
@@ -17,7 +19,7 @@ module Lib
 
         def sort_hash
           sorted_hash = generated_log_hash.sort_by do |_key, value|
-            uniq ? -value.uniq.count : -value.count 
+            uniq ? -value.uniq.count : -value.count
           end
 
           sorted_hash.to_h

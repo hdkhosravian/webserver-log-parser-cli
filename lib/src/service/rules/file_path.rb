@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Lib
   module Src
     module Service
@@ -7,7 +9,7 @@ module Lib
           attr_reader :file_path
 
           def initialize(file_path)
-            @file_path  = file_path
+            @file_path = file_path
           end
 
           def process
@@ -17,8 +19,9 @@ module Lib
           private
 
           def file_exist?
-            unless File.exists?(file_path)
-              puts "ERROR: #{file_path} is not present"
+            unless File.exist?(file_path)
+              # I prefer to use I18N, but for now, I'm using hardcoded English message here.
+              puts "ERROR: #{file_path} is not readable, please make sure the file path is correct"
               return false
             end
 
@@ -29,4 +32,3 @@ module Lib
     end
   end
 end
-          

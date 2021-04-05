@@ -1,11 +1,13 @@
+# frozen_string_literal: true
+
 module Lib
   module Src
     module Cli
       class Parser < ::Dry::CLI::Command
-        desc "Webserver Log Parser"
+        desc 'Webserver Log Parser'
 
-        option :file_path, required: false, default: 'webserver.log', desc: "path to the log file"
-        option :uniq, required: false, default: "false", desc: "sort base on uniq views"
+        option :file_path, required: false, default: 'webserver.log', desc: 'path to the log file'
+        option :uniq, required: false, default: 'false', desc: 'sort base on uniq views'
 
         def call(file_path:, uniq:, **)
           # if the file didn't exist just show an error about it to the user
@@ -34,7 +36,7 @@ module Lib
 
         # argumants from commands line are string, for booleans we have to convert them
         def uniq?(uniq)
-          {"false": false, "true": true}[uniq.to_sym]
+          { 'false': false, 'true': true }[uniq.to_sym]
         end
       end
     end
