@@ -59,7 +59,7 @@ You can see all of the viewer counts for a specific page in the' Views' section.
 We're sorting the resulting base on all of the viewers, but you can sort the resulting base on Uniq Viewers too.
 for sorting based on Uniq Viewers, you can use this command:
 
-`./bin/parser -p --uniq=true`
+`./bin/parser parser --uniq=true`
 
 this command will return these results:
 
